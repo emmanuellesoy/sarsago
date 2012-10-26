@@ -23,7 +23,7 @@ function asistio() {
             }
         });
     }
-    $('#nombre').tokenInput("clear");
+    $('#apellidos_buscar').tokenInput("clear");
 }
 
 function registrar_nuevo() {
