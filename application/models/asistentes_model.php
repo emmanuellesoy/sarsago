@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Asistentes_model extends CI_Model {
+class Asistentes_model extends CI_Model{
     
     public function __construct() {
         
@@ -9,7 +9,12 @@ class Asistentes_model extends CI_Model {
         $this->load->database();
         
     }
-    
+    /*
+     * Esta funcion inserta a un nuevo asistente en la base de datos
+     * @para [int] $datos
+     * @return [int] Regresa un 1 si se pudo realizar 
+     * la consulta y un 0 si hubo algu error
+     */
     public function nuevo_m($datos) {
        $consulta = $this->db->insert('asistentes', $datos);
         if($consulta){
@@ -18,15 +23,20 @@ class Asistentes_model extends CI_Model {
             return false;
         }
     }
-    
-    public function buscar_asistentes_m($apellidos) {
-        
-        $this->db->select();
+
+    /*
+     * Esta funcion busca en la tabla asistentes al o los asistentes que
+     * coincidan con los parametros de busqueda 
+     * @para [int] $datos
+     * @return [array] Regresa un arreglo que contiene un indice 'mensaje' 
+     * el cual contiene un 0 si no existieron coincidencias 
+     * y un 1 si hubo uno a más coincidencias
+     */
+    public function buscar_asistentes_m($datos) {
         
         $this->db->from('asistentes');
-        
-        $this->db->like('apellidos', $apellidos);
-        
+        $this->db->like('apellidos', $datos['apellidos']);
+
         $consulta = $this->db->get();
         
         foreach ($consulta->result_array() as $value) {
@@ -52,9 +62,16 @@ class Asistentes_model extends CI_Model {
     
        
     }
-    
+    /*Esta funcion inserta un buleano en la columna Presente 
+     * @para [int] $id 
+     * @return [int] Regresa un 1 si se pudo realizar 
+     * la consulta y un 0 si hubo algu error
+     */
     public function marcar_presente_m($id) {
-        $data = array(  'presente'  =>  1   );
+        $data = array(
+            'presente'  =>  1
+        );
+
         $this->db->where('id', $id);
         $consulta = $this->db->update('asistentes', $data);
         if($consulta){
@@ -63,8 +80,8 @@ class Asistentes_model extends CI_Model {
             return false;
         }
     }
-    /* Esta función extraé 
-     * @param [array] $datos
+    /* Esta función extrae los datos de un asistente seleccionado 
+     * @para [int] $datos
      * @return [array] Regresa un arreglo que contiene un indice 'mensaje' 
      * el cual contiene un 0 si no existieron coincidencias 
      * y un 1 si hubo uno a más coincidencias
@@ -84,8 +101,20 @@ class Asistentes_model extends CI_Model {
            $results['mensaje'] = 0;
            return $results;
        }
-    }
+    }  
     
+    public function insertar_datos($datos){
+    $consulta = $this->db->insert_batch('asistentes', $datos); 
+     if($consulta){
+            return true;
+        } else {
+            return false;
+        }
+ }
 }
+ 
+
+
 /* End of file asistentes_model.php */
 /* Location: ./application/models/asistentes_model.php */
+?>
