@@ -1,1 +1,0 @@
-Aqui va la vista de inicio

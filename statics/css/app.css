@@ -14,6 +14,22 @@
 ----------------------------------------- */
 
 
+#banner{
+	background-image:url('../img/bannerpro.png');
+	background-position: left;
+	background-repeat: no-repeat;
+	margin-left: 118px;
+	width: 842px;
+	height: 149px;
+}
+
+
+#footer{
+
+	background-color: #730101;
+	color: white;
+	border-radius: 10px;
+}
 
 /* -----------------------------------------
    Page Name 1

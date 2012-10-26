@@ -6,27 +6,9 @@ class Verificador extends CI_Controller {
         
         parent::__construct();
         
-    }
-    
-    /*
-     * Muestra el formulario para introducir cadena a separar
-     */
-
-    public function lector_de_cadena () {
+        $this->load->model(array('asistentes_model'));
         
-        
-        
-    }
-    
-    /*
-     * Regresa la cadena separada en un arreglo.
-     * @param [string] $char
-     * @retunr [array] Devuelve un arreglo de la cadena ya seaparada cada vez que encuentra una letra capital
-     */
-    
-    public function separador_de_cadena ($char) {
-        
-        
+        $this->load->helper(array('url'));
         
     }
     
@@ -37,9 +19,13 @@ class Verificador extends CI_Controller {
      * existieron coincidencias y un 1 si hubo uno a más coincidencias
      */
     
-    public function cotejar ($datos) {
+    public function cotejar () {
         
+        $apellidos = $this->input->get('q', TRUE);
+       
+        $asistentes  = $this->asistentes_model->buscar_asistentes_m($apellidos);
         
+        echo json_encode($asistentes);
         
     }
     
@@ -51,7 +37,28 @@ class Verificador extends CI_Controller {
     
     public function marcar_presente ($id) {
         
+        if(trim($id) != ''){
+            echo $this->asistentes_model->marcar_presente_m($id);
+        } else {
+            echo 0;
+        }
         
+        
+    }
+    
+    public function registrar_nuevo () {
+        
+        $registrado = $this->asistentes_model->nuevo_m($this->input->post());
+        
+        if($registrado){
+            
+            echo 'Usuario registrado exitosamente'; 
+            
+        } else {
+            
+            echo 'Error, lo sentimos, el usuario no pudo ser registrado';
+            
+        }
         
     }
     

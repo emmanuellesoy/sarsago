@@ -1,8 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Asistentes_model {
+class Asistentes_model extends CI_Model {
     
     public function __construct() {
+        
+        parent::__construct();
         
         $this->load->database();
         
@@ -17,28 +19,43 @@ class Asistentes_model {
         }
     }
     
-    public function buscar_asistentes_m($datos) {
+    public function buscar_asistentes_m($apellidos) {
+        
         $this->db->select();
-        $this->db->form('asistentes');
-        $this->db->like('apellidos', $datos['apellidos']);
+        
+        $this->db->from('asistentes');
+        
+        $this->db->like('apellidos', $apellidos);
+        
         $consulta = $this->db->get();
+        
         foreach ($consulta->result_array() as $value) {
-           $results[] = $value;
+        
+            $results[] = $value;
+       
+            
        }
+
        if(isset($results)){
-           $results['mensaje'] = 1;
+           
            return $results;
+       
+           
        } else {
+           
            $results['mensaje'] = 0;
+           
            return $results;
+       
+           
        }
+    
+       
     }
     
     public function marcar_presente_m($id) {
-        $data = array(
-            'presente'  =>  1
-        );
-        $this->bd->where('id', $id);
+        $data = array(  'presente'  =>  1   );
+        $this->db->where('id', $id);
         $consulta = $this->db->update('asistentes', $data);
         if($consulta){
             return true;
@@ -52,10 +69,10 @@ class Asistentes_model {
      * el cual contiene un 0 si no existieron coincidencias 
      * y un 1 si hubo uno a más coincidencias
      */
-    public function obtener_datos_asistente_m ($datos) {
+    public function obtener_datos_asistente_m ($apellidos) {
         $this->db->select();
         $this->db->from('asistentes');
-        $this->db->where('apellidos', $datos);
+        $this->db->where('apellidos', $apellidos);
         $consulta = $this->db->get();
         foreach ($consulta->result_array() as $value) {
            $results[] = $value;
