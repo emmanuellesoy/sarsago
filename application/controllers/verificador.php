@@ -62,6 +62,8 @@ class Verificador extends CI_Controller {
         
     }
     
+    
+    
 }
 
 /* End of file verificador.php */

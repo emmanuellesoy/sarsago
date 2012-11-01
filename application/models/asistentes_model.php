@@ -86,13 +86,13 @@ class Asistentes_model extends CI_Model{
      * el cual contiene un 0 si no existieron coincidencias 
      * y un 1 si hubo uno a más coincidencias
      */
-    public function obtener_datos_asistente_m ($apellidos) {
+    public function obtener_datos_asistente_m ($id) {
         $this->db->select();
         $this->db->from('asistentes');
-        $this->db->where('apellidos', $apellidos);
+        $this->db->where('id', $id);
         $consulta = $this->db->get();
         foreach ($consulta->result_array() as $value) {
-           $results[] = $value;
+           $results = $value;
        }
        if(isset($results)){
            $results['mensaje'] = 1;

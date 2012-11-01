@@ -45,3 +45,17 @@ function registrar_nuevo() {
     
     
 }
+
+function imprimir() {
+    var id = $('#selected').attr('name');
+    if(id){
+        var v = b + 'index.php/asistentes/imprimir/'+id;
+        $.ajax({
+            url: v,
+            success: function(data){
+                $('#imprime').html(data);
+            }
+        });
+    }
+    $('#apellidos_buscar').tokenInput("clear");
+}

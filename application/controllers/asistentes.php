@@ -6,6 +6,10 @@ class Asistentes extends CI_Controller {
         
         parent::__construct();
         
+        $this->load->model(array('asistentes_model'));
+        
+        $this->load->helper(array('url'));
+        
     }
     
     /*
@@ -25,9 +29,25 @@ class Asistentes extends CI_Controller {
      * @return [array] Un mensaje con el valor 0 que indica que no fue encontrado el ususario en la BD
      */
     
-    public function imprimir() {
+    public function imprimir($id) {
         
+        $datos = $this->asistentes_model->obtener_datos_asistente_m($id);
         
+        $apellidos_img = explode(' ', $datos['apellidos']);
+        
+        $img_name = '';
+        
+        foreach ($apellidos_img as $apellido_img){
+            
+            $img_name = $img_name.$apellido_img;
+            
+        }
+        
+        $datos['img_name'] = $img_name;
+        
+        $datos = $this->load->view('formulario_para_impresion', $datos, TRUE);
+        
+        echo $datos;
         
     }
     
