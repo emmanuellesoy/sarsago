@@ -2,13 +2,7 @@
 
 <aside class="three columns">
 
-    <h5>MENU</h5>
-    <ul class="side-nav">
-    <li><a href="#">Acceso</a></li>
-    <li><a href="#">Regitro</a></li>
-    <li><a href="#">Impresión</a></li>
-    </ul>
-
+    <img src="<?=base_url(); ?>statics/img/camara.png">
     <!--<div class="panel">
 
 
