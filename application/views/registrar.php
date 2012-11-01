@@ -66,18 +66,18 @@
 
                
                 <option>- - Organo Impartidor de Justicia - -</option>
-                <option value="SCJN" >Suprema Corte de Justicia de la Nación</option>
-                <option value="CJf">Consejo de la Judicatura Federal</option>
-                <option value="TEPJF" >Tribunal Electoral del Poder Judicial de la Federación</option>
-                <option value="PJEF" >Poderes Judiciales de las Entridades Federativas</option>
-                <option value="TFJFA" >Tribunal Federal de Justicia Fiscal y Administrativa</option>
-                <option value="TCAL" >Tribunales Contenciosos Administrativos Locales</option>
-                <option value="TEL" >Tribunales Electorales Locales</option>
-                <option value="JFCA" >Junta Federal de Conciliación y Arbitraje</option>
-                <option value="JLCA" >Juntas Locales de Conciliacion y Arbitraje</option>
-                <option value="TFCA" >Tribunal Federal de Conciliación y Arbitraje</option>
-                <option value="TSA" >Tribunal Superior Agrario</option>
-                <option value="TBCA" >Tribunales Burocráticos(Locales)de Conciliación y Arbitraje</option>
+                <option value="Suprema Corte de Justicia de la Nación" >Suprema Corte de Justicia de la Nación</option>
+                <option value="Consejo de la Judicatura Federal">Consejo de la Judicatura Federal</option>
+                <option value="Tribunal Electoral del Poder Judicial de la Federación" >Tribunal Electoral del Poder Judicial de la Federación</option>
+                <option value="Poderes Judiciales de las Entridades Federativas" >Poderes Judiciales de las Entridades Federativas</option>
+                <option value="Tribunal Federal de Justicia Fiscal y Administrativa" >Tribunal Federal de Justicia Fiscal y Administrativa</option>
+                <option value="Tribunales Contenciosos Administrativos Locales" >Tribunales Contenciosos Administrativos Locales</option>
+                <option value="Tribunales Electorales Locales" >Tribunales Electorales Locales</option>
+                <option value="Junta Federal de Conciliación y Arbitraje" >Junta Federal de Conciliación y Arbitraje</option>
+                <option value="Juntas Locales de Conciliacion y Arbitraje" >Juntas Locales de Conciliacion y Arbitraje</option>
+                <option value="Tribunal Federal de Conciliación y Arbitraje" >Tribunal Federal de Conciliación y Arbitraje</option>
+                <option value="Tribunal Superior Agrario" >Tribunal Superior Agrario</option>
+                <option value="Tribunales Burocráticos(Locales)de Conciliación y Arbitraje" >Tribunales Burocráticos(Locales)de Conciliación y Arbitraje</option>
 
           </select>
               
