@@ -8,7 +8,7 @@ class Asistentes extends CI_Controller {
         
         $this->load->model(array('asistentes_model'));
         
-        $this->load->helper(array('url'));
+        $this->load->helper(array('url', 'file'));
         
     }
     
@@ -48,6 +48,29 @@ class Asistentes extends CI_Controller {
         $datos = $this->load->view('formulario_para_impresion', $datos, TRUE);
         
         echo $datos;
+        
+    }
+    
+    public function get_database() {
+        
+        $contactos = read_file('db/contactos.csv');
+        
+        $contactos = explode('&', $contactos);
+        
+        foreach($contactos as $contacto){
+            
+            $obtener_datos = explode('¬', $contacto);
+                
+              $derechos[] = array('oij' => trim($obtener_datos[0]), 'apellidos' => trim($obtener_datos[1]), 'nombre' => trim($obtener_datos[2]), 'cargo' => trim($obtener_datos[3]));
+
+        }
+        
+        echo '<pre>';
+        print_r($derechos);
+        echo '</pre>';
+        
+        
+        $this->asistentes_model->insertar_datos($derechos);
         
     }
     
