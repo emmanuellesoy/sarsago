@@ -14,7 +14,7 @@
 
 <section id="buttons">
     <input type="reset" name="reset" id="resetbtn" class="resetbtn" value="Borrar">
-    <input type="button" name="submit" id="submitbtn" class="submitbtn" onclick="asistio()" tabindex="7" value="Dar acceso">
+    <input type="button" name="submit" id="submitbtn" class="submitbtn" onclick="asistio()" tabindex="2" value="Dar acceso">
     <br style="clear:both;">
 </section>
 </form>

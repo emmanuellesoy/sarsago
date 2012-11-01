@@ -14,15 +14,22 @@
 
     <section id="buttons">
         <input type="reset" name="reset" id="resetbtn" class="resetbtn" value="Borrar">
-        <input type="button" name="submit" id="submitbtn" class="submitbtn" onclick="imprimir()" tabindex="7" value="Buscar">
+        <input type="button" name="submit" id="submitbtn" class="submitbtn" onclick="imprimir()" value="Buscar">
         <br style="clear:both;">
     </section>
 </form>
     </article>
 
     <div id="imprime">
-        
+
     </div>
+    
+    <section id="buttons">
+      <input type="button" name="imprime" id="imprime" class="submitbtn" onclick="javascript:imprimirSelec('gafete')"value="Imprimir">
+      <br style="clear:both;">
+    </section>
+
+
     
     <hr />
 

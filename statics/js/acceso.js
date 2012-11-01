@@ -58,4 +58,18 @@ function imprimir() {
         });
     }
     $('#apellidos_buscar').tokenInput("clear");
+
+
 }
+
+
+function imprimirSelec(nombre)
+{
+ var ficha = document.getElementById(nombre);//almacenamos en variable los datos del div a imprimir
+ var ventimp = window.open(' ', 'Impresion');//aqui se genera una pagina temporal 
+ ventimp.document.write( ficha.innerHTML );//aqui cargamos el contenido del div seleccionado
+ ventimp.document.close();//cerramos el documento
+ ventimp.print( );//enviamos los datos a la impresora
+ ventimp.close();//cerramos ventana temporal
+}
+
