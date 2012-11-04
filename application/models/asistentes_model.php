@@ -32,10 +32,13 @@ class Asistentes_model extends CI_Model{
      * el cual contiene un 0 si no existieron coincidencias 
      * y un 1 si hubo uno a más coincidencias
      */
-    public function buscar_asistentes_m($datos) {
+    public function buscar_asistentes_m($apellidos) {
         
         $this->db->from('asistentes');
-        $this->db->like('apellidos', $datos['apellidos']);
+
+        $this->db->where('presente', 0);
+
+        $this->db->like('apellidos', $apellidos);
 
         $consulta = $this->db->get();
         

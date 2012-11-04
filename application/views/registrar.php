@@ -90,7 +90,7 @@
                     <option value="Magistrado">Magistrado</option>
                     <option value="Ministro" >Ministro</option>
                     <option value="Presidente" >Presidente</option>
-                    <option value="IJL" >Impartidor de Justicia Laboral</option>
+                    <option value="Impartidor de Justicia Laboral" >Impartidor de Justicia Laboral</option>
 
           </select>
         

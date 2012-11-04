@@ -59,7 +59,6 @@ function imprimir() {
     }
     $('#apellidos_buscar').tokenInput("clear");
 
-
 }
 
 
@@ -71,5 +70,11 @@ function imprimirSelec(nombre)
  ventimp.document.close();//cerramos el documento
  ventimp.print( );//enviamos los datos a la impresora
  ventimp.close();//cerramos ventana temporal
+}
+
+function vipAlert()
+{
+    $('body').css('background-color', '#00CC00');
+    //location.reload();
 }
 

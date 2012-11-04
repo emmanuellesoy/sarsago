@@ -8,4 +8,5 @@
 <link rel="stylesheet" href="<?=base_url(); ?>statics/css/token-input.css">
 <link rel="stylesheet" href="<?=base_url(); ?>statics/css/token-input-facebook.css">
 <link rel="stylesheet" href="<?=base_url(); ?>statics/css/token-input-mac.css">
+<link rel="stylesheet" media="print" href="<?=base_url(); ?>statics/css/print.css">
 <script src="<?=base_url(); ?>statics/js/modernizr.foundation.js"></script>
