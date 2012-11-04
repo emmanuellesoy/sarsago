@@ -21,9 +21,9 @@ class Verificador extends CI_Controller {
     
     public function cotejar () {
         
-        $datos['apellidos'] = $this->input->get('q', TRUE);
+        $apellidos = $this->input->get('q', TRUE);
        
-        $asistentes  = $this->asistentes_model->buscar_asistentes_m($datos['apellidos']);
+        $asistentes  = $this->asistentes_model->buscar_asistentes_m($apellidos);
         
         echo json_encode($asistentes);
         
