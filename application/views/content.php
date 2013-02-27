@@ -3,6 +3,6 @@
 
 <div class="row">
     <?=(isset($section)) ? $section : ''; ?>
-    <?=(isset($toolbar)) ? $toolbar : ''; ?>
+    <?=(isset($toolbar)) ? $toolbar : ''; ?> 
 </div>
 <?=(isset($footer)) ? $footer : ''; ?>

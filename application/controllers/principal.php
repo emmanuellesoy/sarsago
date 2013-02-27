@@ -18,7 +18,8 @@ class Principal extends CI_Controller {
         
         $data['section'] = $this->load->view($section, '', TRUE);
         
-        $data['toolbar'] = $this->load->view('toolbar', $data, TRUE);
+        //Carga el espacio de la camara
+        //$data['toolbar'] = $this->load->view('toolbar', $data, TRUE);
         
         $data['footer'] = $this->load->view('footer', '', TRUE);
         

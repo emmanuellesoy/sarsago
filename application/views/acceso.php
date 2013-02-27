@@ -1,30 +1,19 @@
-<!-- Main Blog Content -->
-<div class="nine columns" role="content">
-
-    <article>
+<!-- INICIA SECCION DAR ACCESO -->
+<div class="six columns centered">
 
     <form name="Registro" id="form" method="post" action="#">
-<div id="wrapping" class="clearfix">
+          
+        <div id="wrapping" class="clearfix">
+                <section id="aligned">
+                <input autofocus type="text" autocomplete="off" tabindex="1">
+            </div>  
 
-    <section id="aligned">
-    <input autofocus type="text" name="apellidos_buscar" id="apellidos_buscar" placeholder="Ingresa el Nombre" autocomplete="off" tabindex="1" class="txtinput">
-
-    </div>
-
-
-<section id="buttons">
-    <input type="reset" name="reset" id="resetbtn" class="resetbtn" value="Borrar">
-    <input type="button" name="submit" id="submitbtn" class="submitbtn" onclick="asistio()" tabindex="2" value="Dar acceso">
-    <input type="button" name="vip" id="vip" class="vipbtn" onclick="vipAlert()" value="VIP">
-    <br style="clear:both;">
-</section>
-</form>
-    </article>
-
-    <hr />
-
-
+            <section class="eight columns centered" id="buttons">
+                    <input type="reset" name="reset" id="resetbtn" class="resetbtn" value="Borrar">
+                    <input type="button" name="submit" id="submitbtn" class="submitbtn" onclick="asistio()" tabindex="2" value="Dar acceso">
+                    <br style="clear:both;">
+            </section>
+    </form>
 
 </div>
-
-<!-- End Main Content -->
+<!-- TERMINA SECCION DAR ACCSESO-->

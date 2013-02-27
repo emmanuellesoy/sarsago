@@ -1,4 +1,4 @@
-<!-- Main Blog Content -->
+<!-- Inicia vista Impresion -->
 <div class="nine columns" role="content">
 
     <article>
@@ -7,7 +7,7 @@
     <div id="wrapping" class="clearfix">
 
     <section id="aligned">
-    <input type="text" name="apellidos_buscar" id="apellidos_buscar" placeholder="Ingresa el Nombre" autocomplete="off" tabindex="1" class="txtinput">
+    <input autofocus type="text" name="apellidos_buscar" id="apellidos_buscar" placeholder="Ingresa el Nombre" autocomplete="off" tabindex="1" class="txtinput">
 
     </div>
 
@@ -24,15 +24,11 @@
 
     </div>
     
-    <section id="buttons">
-      <input type="button" name="imprime" id="imprime" class="submitbtn" onclick="javascript:imprimirSelec('gafete')"value="Imprimir">
-      <br style="clear:both;">
-    </section>
-
+    
 
     
     <hr />
 
 </div>
 
-<!-- End Main Content -->
+<!-- Termina vista Impresion -->

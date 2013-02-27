@@ -8,7 +8,7 @@ class Verificador extends CI_Controller {
         
         $this->load->model(array('asistentes_model'));
         
-        $this->load->helper(array('url'));
+        $this->load->helper(array('url', 'qr'));
         
     }
     
@@ -59,6 +59,20 @@ class Verificador extends CI_Controller {
             echo 'Error, lo sentimos, el usuario no pudo ser registrado';
             
         }
+        
+    }
+    
+    /*
+     * Genera el QR
+     * @para [int] $id
+     * @return 
+     */
+     public function generar_qr() {
+        
+     $this->asistentes_model->consulta_id($datos);
+        
+     generar_qr($datos);
+        
         
     }
     

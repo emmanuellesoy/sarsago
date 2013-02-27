@@ -104,6 +104,37 @@ class Asistentes_model extends CI_Model{
        }
     }  
     
+    
+     /* 
+    * Método consulta el ID del asistente la base de datos
+    * @author Jorge Olvera
+    * @date 2013.02.27
+    * @updated 0000.00.00
+    * @param array datos | busca el ID del asistente.
+    * @return datos | regrea el ID del Asistente .
+    * @ejem id=  1.
+    */
+    
+    
+     public function consulta_id($datos){
+        
+        $this->db->select('id');
+        
+        $this->db->from('asistentes');
+        
+        $this->db->where('id', $datos['id']);
+        
+        $datos = $query = $this->db->get();
+        
+        
+        
+        return $datos;
+        
+        
+        
+    }//fin de consulta ID
+    
+    
     public function insertar_datos($datos){
     $consulta = $this->db->insert_batch('asistentes', $datos); 
      if($consulta){
