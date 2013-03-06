@@ -13,17 +13,34 @@ $(document).ready(function(){
 });
 
 function asistio() {
-    var id = $('#selected').attr('name');
+    var id = $('#usuario_id').val();
     if(id){
         var v = b + 'index.php/verificador/marcar_presente/'+id;
         $.ajax({
             url: v,
-            success: function(){
-                alert('Acceso permitido');            
+            success: function(data){
+                if(data == 'no_existe'){
+                    $('body').css('background-color', '#953F32');
+                    setTimeout(function() {
+                      $('body').css('background-color', '#ffffff');
+                    }, 1000);
+                } else {
+                    if(data == 1){
+                        $('body').css('background-color', '#181A49');
+                        setTimeout(function() {
+                          $('body').css('background-color', '#ffffff');
+                        }, 1000);
+                    } else {
+                        $('body').css('background-color', '#3DB86A');
+                        setTimeout(function() {
+                          $('body').css('background-color', '#ffffff');
+                        }, 1000);
+                    }
+                }
             }
         });
     }
-    $('#apellidos_buscar').tokenInput("clear");
+    $('#usuario_id').val('');
 }
 
 function registrar_nuevo() {

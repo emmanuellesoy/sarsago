@@ -16,12 +16,22 @@ class Asistentes_model extends CI_Model{
      * la consulta y un 0 si hubo algu error
      */
     public function nuevo_m($datos) {
-       $consulta = $this->db->insert('asistentes', $datos);
-        if($consulta){
-            return true;
+       
+        $consulta = $this->db->insert('asistentes', $datos);
+       
+       if($consulta){
+            
+            $datos ['id'] = mysql_insert_id();
+            
+            $datos['mensaje'] = true;
+            
         } else {
-            return false;
+            
+             $datos['mensaje'] = false;
+            
         }
+        
+        return $datos;
     }
 
     /*
@@ -72,14 +82,37 @@ class Asistentes_model extends CI_Model{
         $data = array(
             'presente'  =>  1
         );
-
+        
+        $this->db->select('vip');
+        
+        $this->db->from('asistentes');
+        
         $this->db->where('id', $id);
-        $consulta = $this->db->update('asistentes', $data);
-        if($consulta){
-            return true;
+        
+        $resultados = $this->db->get();
+        
+        if($resultados->num_rows() > 0){
+        
+            $this->db->where('id', $id);
+            
+            $consulta = $this->db->update('asistentes', $data);
+            
+            foreach ($resultados->result_array() as $row){
+                
+                $datos[] = $row;
+                
+            }
+            
+            $datos['mensaje'] = 'existe';
+        
         } else {
-            return false;
+        
+            $datos['mensaje'] = 'no_existe';
+        
         }
+        
+        return $datos;
+        
     }
     /* Esta función extrae los datos de un asistente seleccionado 
      * @para [int] $datos

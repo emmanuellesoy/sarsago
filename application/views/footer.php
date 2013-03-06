@@ -13,7 +13,7 @@
       </div>
     </div>
   </footer>
-  <script src="<?=base_url(); ?>statics/js/jquery-1.8.2.min"></script>
+  <script src="<?=base_url(); ?>statics/js/jq.js"></script>
   <script src="<?=base_url(); ?>statics/js/foundation.min.js"></script>
   <script src="<?=base_url(); ?>statics/js/app.js"></script>
   <script type="text/javascript">var b = "<?=base_url(); ?>";</script>

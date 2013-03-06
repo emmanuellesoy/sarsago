@@ -37,19 +37,12 @@ class Verificador extends CI_Controller {
     
     public function marcar_presente ($id) {
         
+        if(trim($id) != ''){
+            echo $this->asistentes_model->marcar_presente_m($id);
+        } else {
+            echo 0;
+        }
         
-           $datos = $this->asistentes_model->marcar_presente_m($id);
-        
-           if($datos['mensaje'] == 'no_existe'){
-               
-               print_r($datos['mensaje']);
-               
-           } else {
-               
-               print_r($datos[0]['vip']);
-               
-           }
-           
         
     }
     
@@ -61,11 +54,13 @@ class Verificador extends CI_Controller {
             
            $this->load->library('ciqrcode');
 
-        $params['data'] = $registrado['id'];
+        $params['data'] = 'This is a text to encode become QR Code';
         $params['level'] = 'H';
-        $params['size'] = 8;
-        $params['savename'] = FCPATH.'statics/img/code_bars/'.$registrado['id'].'.png';
+        $params['size'] = 10;
+        $params['savename'] = FCPATH.'algo.png';
         $this->ciqrcode->generate($params);
+
+        echo '<img src="'.base_url().'algo.png" />';
             
             echo 'Usuario registrado exitosamente';
             
