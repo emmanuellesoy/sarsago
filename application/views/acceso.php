@@ -5,7 +5,7 @@
           
         <div id="wrapping" class="clearfix">
                 <section id="aligned">
-                <input autofocus type="text" id="usuario_id" name="usuario_id" autocomplete="off" tabindex="1" />
+                <input autofocus="autofocus" type="text" id="usuario_id" name="usuario_id" autocomplete="off" tabindex="1"  onblur="asistio()"/>
             </div>  
 
             <section class="eight columns centered" id="buttons">

@@ -6,7 +6,8 @@
       
     
     <div id="wrapping" class="clearfix">
-      <form name="registro" id="form" method="post" action="<?=base_url(); ?>index.php/verificador/registrar_nuevo">
+     
+        <form name="registro" id="form" method="post" action="<?=base_url(); ?>index.php/verificador/registrar_nuevo">
       
           <section id="aligned">
           
@@ -92,10 +93,17 @@
         <input type="date" name="nacimiento" id="nacimiento" placeholder="Fecha de Nacimiennto" autocomplete="on" tabindex="12" class="txtinput">
 
         <input type="identificacion" name="identificacion" id="idenficacion" placeholder="Identificacion" tabindex="13" class="txtinput">
+        
+        <select name="VIP" id="vip" tabindex="14" class="selmenu">
+                <option value="0"> - -VIP- -</option>
+                <option value="1">SI</option>
+                <option value="0">NO</option>
+          </select>
+        
     
         <section class="eight columns centered" id="buttons">
              <input type="reset" id="resetbtn" class="resetbtn no-erase" tabindex="14" value="Borrar">
-             <input type="button" id="registrar"  onclick="registrar_nuevo()" class="submitbtn no-erase" tabindex="15" value="Registrar">
+             <input type="button" id="registrar"  onclick="registrar_nuevo()" class="submitbtn no-erase" value="Registrar">
              
          </section>
         

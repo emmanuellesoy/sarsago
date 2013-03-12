@@ -24,16 +24,19 @@ function asistio() {
                     setTimeout(function() {
                       $('body').css('background-color', '#ffffff');
                     }, 1000);
+                    $("input:text:visible:first").focus();
                 } else {
                     if(data == 1){
                         $('body').css('background-color', '#181A49');
                         setTimeout(function() {
                           $('body').css('background-color', '#ffffff');
+                           $("input:text:visible:first").focus();
                         }, 1000);
                     } else {
                         $('body').css('background-color', '#3DB86A');
                         setTimeout(function() {
                           $('body').css('background-color', '#ffffff');
+                           $("input:text:visible:first").focus();
                         }, 1000);
                     }
                 }
